@@ -13,8 +13,7 @@ import {
   Calendar,
   Shield,
   Target,
-  Star,
-  Link
+  Star
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -109,12 +108,10 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                asChild
+                onClick={() => window.location.href = "/services"}
                 className="px-8 py-4 text-lg font-semibold bg-background/10 backdrop-blur-sm"
               >
-                <Link to={"/services"}>
                 View Services
-                </Link>
               </Button>
             </div>
           </div>
@@ -123,13 +120,18 @@ const Home = () => {
 
       {/* Contact Form Modal/Section */}
       {showContactForm && (
-        <section className="py-16 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
-              <ContactForm />
-            </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className=" rounded-lg shadow-lg max-w-2xl w-full p-6 relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              onClick={() => setShowContactForm(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <ContactForm />
           </div>
-        </section>
+        </div>
       )}
 
       {/* Stats Section */}
