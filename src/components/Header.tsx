@@ -82,8 +82,8 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button variant="default" className="w-full">
-                  Pay Online
+                <Button asChild variant="default" className="w-full">
+                  <Link to="/payment">Pay Online</Link>
                 </Button>
               </div>
             </div>

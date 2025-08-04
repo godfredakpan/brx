@@ -13,7 +13,8 @@ import {
   Calendar,
   Shield,
   Target,
-  Star
+  Star,
+  Link
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -108,10 +109,12 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                onClick={() => window.location.href = "/services"}
+                asChild
                 className="px-8 py-4 text-lg font-semibold bg-background/10 backdrop-blur-sm"
               >
+                <Link to={"/services"}>
                 View Services
+                </Link>
               </Button>
             </div>
           </div>
